@@ -1,236 +1,411 @@
+/* Base styles for general layout */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffe6e6;
-    color: #333;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6e6;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #ff3366, #ff99b6);
+  color: #fff;
+  border-bottom: 4px solid #b30047;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Productos en dos columnas */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 1rem; /* Espaciado entre los productos */
+  padding: 2rem;
+  justify-items: center; /* Centra los productos */
+}
+
+
+/* Ajustes para los productos */
+.product {
+  background-color: #fff;
+  border-radius: 12px; /* Bordes más suaves */
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px; /* Aumento el ancho de los productos */
+  border: 4px solid transparent; /* Establecer borde transparente inicialmente */
+  background-clip: padding-box; /* Para aplicar el borde solo alrededor del contenido */
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transition: all 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Borde brillante con animación */
+.product::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px; /* Bordes más suaves */
+  background: linear-gradient(45deg, #e499ac, #df96c6, #e97592);
+  background-size: 400% 400%;
+  animation: gradientAnimation 4s ease infinite;
+  z-index: -1; /* Coloca el borde detrás del contenido */
+}
+
+/* Animación para el borde brillante */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 400% 0;
   }
-  
-  .header {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f8bdc8;
-    color: #800000;
+  50% {
+      background-position: 0 100%;
   }
-  
-  .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+  100% {
+      background-position: 400% 0;
+  }
+}
+
+/* Efecto al pasar el mouse */
+.product:hover {
+  transform: scale(1.05); /* Aumenta el tamaño del cuadro al pasar el mouse */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+  border-color: transparent; /* Deja el borde transparente para el efecto */
+}
+
+/* Efecto en el borde */
+.product:hover::before {
+  animation: gradientAnimationHover 1s ease forwards; /* Detiene la animación del borde y la hace más rápida */
+  background: linear-gradient(45deg, #ec87a1, #e79bce, #df9dad);
+  background-size: 400% 400%; /* Vuelve a aplicar el fondo animado */
+  background-position: 400% 0;
+  border: none;
+}
+
+/* Animación rápida del borde al hacer hover */
+@keyframes gradientAnimationHover {
+  0% {
+      background-position: 400% 0;
+  }
+  50% {
+      background-position: 0 100%;
+  }
+  100% {
+      background-position: 400% 0;
+  }
+}
+
+/* Imágenes de los productos */
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Títulos de los productos */
+.product h2 {
+  font-size: 1.8rem; /* Títulos más grandes */
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Precio y descripciones */
+.product p {
+  font-size: 1.1rem; /* Texto más grande */
+  color: #666;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .products {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+}
+
+
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, #ff3366, #ff6699);
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  border-top: 4px solid #ff99b6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.footer .footer-content p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer .footer-content p:hover {
+  color: #ff99b6; /* Cambio de color cuando se pasa el ratón */
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+}
+
+.footer .footer-content .contact-info {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.footer .footer-content .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.footer .footer-content .social-links a {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .footer-content .social-links a:hover {
+  color: #ff99b6;
+  transform: scale(1.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer .footer-bottom {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ffb3d9;
+}
+
+.footer .footer-bottom p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* WhatsApp Button */
+.footer .whatsapp-btn {
+  background-color: #25d366;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.footer .whatsapp-btn:hover {
+  background-color: #128c7e;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Instagram Button */
+.footer .instagram-btn {
+  background-color: #e1306c;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.footer .instagram-btn:hover {
+  background-color: #c13584;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer .footer-content {
+      flex-direction: column;
+      text-align: center;
   }
 
-/* Contenedor principal de los productos */
-.products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-    gap: 1.5rem; /* Espaciado entre los cuadros */
-    padding: 1rem;
+  .footer .footer-content .social-links {
+      margin-top: 1.5rem;
   }
-  
-  /* Estilo individual para cada producto */
-  .products .product {
-    background: #fff5f7;
-    border: 1px solid #ffd1dc;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 1rem;
-    width: 60%; /* Ancho más estrecho */
-    height: 500px; /* Aumentamos aún más la altura para que sea más largo */
-    display: flex;
-    flex-direction: column; /* Asegura que el contenido se alinee verticalmente */
-    justify-content: flex-start; /* Ajustamos para que el contenido esté bien alineado */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto; /* Centra los productos */
-    overflow: hidden; /* Evita que el contenido se desborde */
+
+  .footer .whatsapp-btn, .footer .instagram-btn {
+      width: 100%;
+      margin: 0.5rem 0;
   }
-  
-  /* Hover para destacar */
-  .products .product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.customization {
+  background: linear-gradient(135deg, #ff99b6, #ffe6f0);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.customization h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b30047;
+  margin-bottom: 1.5rem;
+}
+
+.customization p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.customization ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.customization ul li {
+  margin: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1rem;
+}
+
+.customization ul li::before {
+  content: "❤";
+  position: absolute;
+  left: 0;
+  color: #ff3366;
+  font-size: 1.4rem;
+}
+
+.customization strong {
+  font-weight: bold;
+  color: #b30047;
+}
+
+.customization a {
+  padding: 1rem 2rem;
+  background-color: #ff3366;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.customization a:hover {
+  background-color: #ff6699;
+  transform: scale(1.05);
+}
+
+.follow-instagram p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.instagram-link {
+  padding: 0.8rem 1.5rem;
+  background-color: #b30047;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.instagram-link:hover {
+  background-color: #ff6699;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
- /* Imágenes dentro de los productos */
-.products .product img {
-    width: 100%;
-    max-width: 150px; /* Aumentamos el tamaño máximo de la imagen */
-    height: auto; /* Mantiene las proporciones de la imagen */
-    border-radius: 10px;
-    margin: 0 auto 1rem; /* Centra la imagen y agrega espacio inferior */
-    display: block;
+  to {
+      opacity: 1;
   }
-  
-  /* Título del producto */
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Media Queries for mobile devices */
+@media (max-width: 768px) {
+  .products {
+      grid-template-columns: 1fr; /* One column on mobile */
+  }
+
+  .header h1 {
+      font-size: 2.2rem; /* Smaller header text */
+  }
+
   .products h2 {
-    color: #b30047;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    overflow: hidden; /* Evita que el título se desborde */
-    text-overflow: ellipsis; /* Agrega "..." si el texto es demasiado largo */
+      font-size: 1.4rem; /* Smaller product titles */
   }
-  
-  /* Descripción del producto */
+
   .products p {
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-    line-height: 1.5;
-    overflow: hidden; /* Evita el desbordamiento del texto */
-    text-overflow: ellipsis; /* Agrega "..." si el texto es demasiado largo */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+      font-size: 0.9rem; /* Smaller product description text */
   }
-  
-  /* Listas de rellenos o detalles */
-  .products ul {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
-    text-align: left; /* Alinea el texto a la izquierda */
-    font-size: 0.9rem;
-    overflow: hidden; /* Evita el desbordamiento */
+
+  .footer p {
+      font-size: 1rem; /* Smaller footer text */
   }
-  
-  .products ul li {
-    margin: 0.3rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    overflow: hidden; /* Evita el desbordamiento de los elementos de la lista */
-  }
-  
-  /* Ícono decorativo para las listas */
-  .products ul li::before {
-    content: "🍫"; /* Ícono decorativo */
-    position: absolute;
-    left: 0;
-    font-size: 1rem;
-    color: #ff99b6;
-  }
-  
-  /* Precios */
-  .products .product p strong {
-    display: block;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: #b30047;
-  }
-  
-  
-  
-  
-  
-  .footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #800000;
-    color: #fff;
-  }
-  .customization {
-    background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin: 2rem auto;
-    text-align: center;
-    max-width: 800px;
-    color: #800000;
-  }
-  
+
   .customization h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #b30047;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 1.8rem; /* Smaller heading in customization section */
   }
-  
-  .customization p {
-    margin: 0.8rem 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
+
+  .customization p, .customization ul li {
+      font-size: 1.1rem; /* Smaller font size for easier reading */
   }
-  
-  .customization ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-  
-  .customization ul li {
-    margin: 0.8rem 0;
-    padding-left: 2rem;
-    text-align: left;
-    font-size: 1rem;
-    position: relative;
-    color: #4d004d;
-  }
-  
-  .customization ul li::before {
-    content: "❤";
-    position: absolute;
-    left: 0;
-    color: #ff3366;
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  
-  .customization strong {
-    color: #b30047;
-    font-weight: bold;
-  }
-  
-  .customization a {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.8rem 1.5rem;
-    background: #ff99b6;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-  
-  .customization a:hover {
-    background: #ff3366;
-    transform: scale(1.05);
-  }
-  
- /* Estilo para la sección de Instagram */
-.follow-instagram {
-    text-align: center;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #ff99b6; /* Color suave de fondo */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
-    height: 90px; /* Define una altura fija para el contenedor */
-  }
-  
-  /* Estilo para el texto */
+
   .follow-instagram p {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    line-height: 1.4; /* Asegura que el texto se vea bien centrado */
+      font-size: 1.2rem; /* Adjust font size in the Instagram section */
   }
-  
-  /* Estilo para el enlace */
-  .instagram-link {
-    text-decoration: none;
-    font-size: 1.0rem;
-    color: #ffffff;
-    background-color: #b30047; /* Color que coincide con el tema */
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .instagram-link:hover {
-    background-color: #ff6699; /* Cambio de color al pasar el mouse */
-  }
-  
+}
