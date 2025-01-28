@@ -18,3 +18,20 @@ img {
 border-radius: 50%; /* Hace que el logo tenga forma circular */
 }
 
+.instagram-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom right, #f58529, #d62976, #8a3ab9, #fd1d1d); /* Colores de Instagram */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 25px; /* Forma ovalada */
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.instagram-button:hover {
+  background: linear-gradient(to bottom right, #fd1d1d, #8a3ab9, #d62976, #f58529); /* Colores invertidos en hover */
+}
