@@ -1,96 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo San Valentín - Dulcemanía</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <h1>Catálogo San Valentín - Dulcemanía</h1>
-    <p>Sorprende a quien más quieres con dulces únicos</p>
-  </header>
-  
-  <section class="products">
-    <!-- Chocotejas -->
-    <div class="product">
-      <img src="img/chocotejas.jpg" alt="Chocotejas">
-      <h2>Chocotejas</h2>
-      <p>Deliciosas chocotejas con rellenos únicos para cada gusto:</p>
-      <h3>Rellenos:</h3>
-      <ul class="fillings">
-        <li><strong>Cremosos tipo cheesecake:</strong> Fresa, Limón, Maracuyá.</li>
-        <li><strong>Clásicos:</strong> Manjar con pasas, Coco, Maní, Chin-chin, Oreo, Pecanas.</li>
-        <li><strong>Solo frutales:</strong> Fresa, Limón, Maracuyá, Lúcuma.</li>
-      </ul>
-      <p><strong>Precio:</strong> S/5.00 por unidad</p>
-    </div>
-  
-    <!-- Chocofresas -->
-    <div class="product">
-      <img src="chocofresas.jpg" alt="Chocofresas">
-      <h2>Chocofresas</h2>
-      <p>Fresas frescas bañadas en tu cobertura favorita:</p>
-      <ul class="fillings">
-        <li>Chocolate normal</li>
-        <li>Chocolate blanco</li>
-        <li>Chocolate rosado</li>
-      </ul>
-      <p><strong>Precio:</strong> S/10.00 por media docena</p>
-    </div>
-  
-    <!-- Cakepop -->
-    <div class="product">
-      <img src="img/cakepop.jpg" alt="Cakepop">
-      <h2>Cakepop</h2>
-      <p>Delicioso pastel en diversas presentaciones con cobertura personalizable:</p>
-      <ul class="fillings">
-        <li><strong>Formas:</strong> Círculo, corazón, paleta.</li>
-        <li><strong>Coberturas:</strong> Chocolate normal, blanco, rosado.</li>
-      </ul>
-      <p><strong>Precios:</strong></p>
-      <ul>
-        <li>Círculo: S/4.00 por unidad</li>
-        <li>Corazón: S/5.00 por unidad</li>
-        <li>Paleta: S/6.00 por unidad</li>
-      </ul>
-    </div>
-  
-    <!-- Mini Donas -->
-    <div class="product">
-      <img src="mini-donas.jpg" alt="Mini Donas">
-      <h2>Mini Donas</h2>
-      <p>Pequeñas pero deliciosas, decoradas con tu cobertura favorita:</p>
-      <ul class="fillings">
-        <li>Chocolate normal</li>
-        <li>Chocolate blanco</li>
-        <li>Chocolate rosado</li>
-      </ul>
-      <p><strong>Precio:</strong> S/8.00 por media docena</p>
-    </div>
-  </section>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulcemanía - Especial San Valentín</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <section class="customization">
-    <h2>¡Personaliza tu pedido!</h2>
-    <p>Haz que tu regalo sea aún más especial con nuestras <strong>cajas temáticas de San Valentín</strong>. Puedes incluir:</p>
-    <ul>
-      <li>Una selección de chocotejas, chocofresas, cakepops y mini donas.</li>
-      <li>Mensajes personalizados dentro de la caja.</li>
-      <li>Decoraciones románticas: cintas, corazones y más.</li>
-    </ul>
-    <p><strong>Precio de personalización:</strong> Desde S/15.00 (incluye caja y decoración).</p>
-    <p>¡Consulta por WhatsApp para más opciones de personalización!</p>
-  </section>
-  
-  <footer class="footer">
-    <p>Contacta con nosotros para tus pedidos: WhatsApp 904-042-556</p>
-    <div class="follow-instagram">
-        <p>¡Síguenos en Instagram para más novedades y promociones! 📸</p>
-        <a href="https://www.instagram.com/dulcemania_25/" target="_blank" class="instagram-link">Síguenos en Instagram</a>
-      </div>      
-    <p>&copy; 2025 Dulcemanía</p>
+</head>
+<body class="font-sans bg-pink-50">
+  <!-- Barra de navegación -->
+  <nav class="navbar text-white py-3">
+    <div class="flex items-center justify-between container mx-auto px-4">
+        <!-- Logo y título -->
+        <div class="flex items-center space-x-4">
+            <img src="img/logo.png" alt="logo" class="h-12 w-12">
+            <h1 class="text-xl font-bold">Dulcemanía</h1>
+        </div>
+
+        <!-- Menú en desktop -->
+        <ul id="menu" class="hidden md:flex space-x-4">
+            <li><a href="#productos" class="hover:underline">Productos</a></li>
+            <li><a href="#promociones" class="hover:underline">Promociones</a></li>
+            <li><a href="#footer" class="hover:underline">Contacto</a></li> <!-- Enlace al footer -->
+        </ul>
+
+        <!-- Botón de menú para móviles -->
+        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white text-center py-20 px-4">
+        <h2 class="text-3xl md:text-4xl font-bold"><span class="highlight">¡Endulza tu San Valentín!</span></h2>
+        <p class="mt-4 text-lg">Descubre nuestros postres especiales para celebrar el amor y la amistad.</p>
+        <a href="#promociones" class="mt-6 inline-block bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-400">Ver Promociones</a>
+    </header>
+
+  <!-- Productos Más Vendidos -->
+<section id="productos" class="py-12 px-4">
+  <div class="container mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-bold mb-6">Nuestros Productos</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Producto 1 -->
+          <div class="bg-white rounded-lg shadow-lg p-4">
+              <img src="https://example.com/donas.jpg" alt="Donas" class="w-full h-48 object-contain">
+              <h4 class="text-xl font-bold mt-4">Donas</h4>
+              <p class="mt-2 text-gray-600">Deliciosas donas decoradas para San Valentín.</p>
+          </div>
+          <!-- Producto 2 -->
+          <div class="bg-white rounded-lg shadow-lg p-4">
+              <img src="img/chocotejas.jpg" alt="Chocotejas" class="w-full h-48 object-contain">
+              <h4 class="text-xl font-bold mt-4">Chocotejas</h4>
+              <p class="mt-2 text-gray-600">Chocotejas rellenas de dulce amor.</p>
+          </div>
+          <!-- Producto 3 -->
+          <div class="bg-white rounded-lg shadow-lg p-4">
+              <img src="https://example.com/alfajores.jpg" alt="Alfajores" class="w-full h-48 object-contain">
+              <h4 class="text-xl font-bold mt-4">Alfajores</h4>
+              <p class="mt-2 text-gray-600">Alfajores perfectos para compartir.</p>
+          </div>
+          <!-- Producto 4 -->
+          <div class="bg-white rounded-lg shadow-lg p-4">
+              <img src="img/cakepop.jpg" alt="Cakepop" class="w-full h-48 object-contain">
+              <h4 class="text-xl font-bold mt-4">Cakepop</h4>
+              <p class="mt-2 text-gray-600">Pequeñas delicias cubiertas de chocolate.</p>
+          </div>
+          <!-- Producto 5 -->
+          <div class="bg-white rounded-lg shadow-lg p-4">
+              <img src="https://example.com/chocofresas.jpg" alt="Chocofresas" class="w-full h-48 object-contain">
+              <h4 class="text-xl font-bold mt-4">Chocofresas</h4>
+              <p class="mt-2 text-gray-600">Fresas frescas cubiertas de chocolate.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+    <!-- Promociones San Valentín -->
+    <section id="promociones" class="bg-pink-100 py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6">Promociones de San Valentín</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Promo 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold">Combo Love</h4>
+                    <p class="mt-2 text-gray-600">Incluye 6 donas decoradas y 3 alfajores.</p>
+                    <p class="mt-4 text-red-600 font-bold">S/ 30.00</p>
+                </div>
+                <!-- Promo 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold">Choco Pack</h4>
+                    <p class="mt-2 text-gray-600">10 chocotejas con decoraciones temáticas.</p>
+                    <p class="mt-4 text-red-600 font-bold">S/ 25.00</p>
+                </div>
+                <!-- Promo 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold">Sweet Mix</h4>
+                    <p class="mt-2 text-gray-600">3 donas, 3 chocotejas y 2 alfajores.</p>
+                    <p class="mt-4 text-red-600 font-bold">S/ 20.00</p>
+                </div>
+                <!-- Promo 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold">Especial San Valentín</h4>
+                    <p class="mt-2 text-gray-600">Incluye cakepops, chocofresas y alfajores personalizados.</p>
+                    <p class="mt-4 text-red-600 font-bold">S/ 35.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Personaliza tu Pedido -->
+       <section id="personalizacion" class="py-12 px-4 bg-pink-50">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6">¡Personaliza tu Pedido!</h3>
+            <p class="text-gray-600 mb-4">Haz que tu regalo sea aún más especial con nuestras cajas temáticas de San Valentín. Puedes incluir:</p>
+            <ul class="list-disc list-inside text-gray-600 text-left max-w-lg mx-auto mb-4">
+                <li>Una selección de chocotejas, chocofresas, cakepops y mini donas.</li>
+                <li>Mensajes personalizados dentro de la caja.</li>
+                <li>Decoraciones románticas: cintas, corazones y más.</li>
+            </ul>
+            <p class="text-gray-600 font-bold mb-4">Precio de personalización: Desde S/15.00 (incluye caja y decoración).</p>
+            <a href="https://wa.me/+51904042556" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-400">Consulta por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer id="footer" class="footer text-center text-white py-6">
+      <p class="text-sm">&copy; 2025 Dulcemanía - Todos los derechos reservados</p>
+      <p class="text-sm">Síguenos en: 
+          <a href="https://www.facebook.com" class="text-blue-500 hover:underline">Facebook</a> | 
+          <a href="https://www.instagram.com" class="text-pink-500 hover:underline">Instagram</a>
+      </p>
   </footer>
+
+    <!-- Script para menú móvil -->
+    <script href="script.js"></script>
 </body>
 </html>
+
