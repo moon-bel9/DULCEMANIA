@@ -1,8 +1,11 @@
 .hero-bg {
-  background-image: url('img/fondo.avif'); /* Cambia esta URL por una imagen de fondo temática */
-  background-size: cover;
-  background-position: center;
+  background-image: url('img/fondo.avif');
+  background-size: cover;  /* La imagen cubre el área sin distorsionarse */
+  background-position: center center;  /* Centra la imagen */
+  background-attachment: fixed;
+  height: 30vh;
 }
+
 .highlight {
   color: #d63384;
   padding: 0.25rem 0.5rem;
