@@ -2,8 +2,16 @@
   background-image: url('img/fondo.avif');
   background-size: cover;  /* La imagen cubre el área sin distorsionarse */
   background-position: center center;  /* Centra la imagen */
-  background-attachment: fixed;
-  height: 30vh;
+  background-attachment: fixed;  /* Fondo fijo en pantallas grandes */
+  height: 30vh;  /* Establece la altura para pantallas grandes */
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;  /* Desactiva el fondo fijo en pantallas pequeñas */
+    background-size: cover;  /* Asegura que la imagen cubra el área sin distorsionarse */
+    height: 50vh;  /* Ajusta la altura de la imagen para pantallas pequeñas */
+  }
 }
 
 .highlight {
