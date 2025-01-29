@@ -12,7 +12,7 @@
 </head>
 <body class="font-sans bg-pink-50">
   <!-- Barra de navegación -->
-  <nav class="navbar text-white py-3 bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 shadow-md">
+  <nav class="navbar text-white py-3 bg-gradient-to-r from-pink-500 via-red-200 to-blue-400 shadow-md">
     <div class="flex items-center justify-between container mx-auto px-6">
         <!-- Logo y título -->
         <div class="flex items-center space-x-4">
@@ -36,31 +36,16 @@
             </button> 
         </div>
     </div>
-    
-<!-- Menú desplegable en móvil -->
-<div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 text-white py-4 px-6 space-y-4">
-    <ul>
-        <li class="flex items-center space-x-3">
-            <svg class="h-5 w-5 text-yellow-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4v16h18V4H3z" />
-            </svg>
-            <a href="#productos" class="hover:text-yellow-200 transition-all duration-200">Productos</a>
-        </li>
-        <li class="flex items-center space-x-3">
-            <svg class="h-5 w-5 text-yellow-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18" />
-            </svg>
-            <a href="#promociones" class="hover:text-yellow-200 transition-all duration-200">Promociones</a>
-        </li>
-        <li class="flex items-center space-x-3">
-            <svg class="h-5 w-5 text-yellow-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10V5a2 2 0 00-2-2H5a2 2 0 00-2 2v15a2 2 0 002 2h14a2 2 0 002-2v-5" />
-            </svg>
-            <a href="#footer" class="hover:text-yellow-200 transition-all duration-200">Contacto</a>
-        </li>
-    </ul>
-</div>
 
+    <!-- Menú desplegable en móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 text-white py-4 px-6 space-y-4">
+        <ul>
+            <li><a href="#productos" class="hover:text-pink-400 transition-all duration-200">Productos</a></li>
+            <li><a href="#promociones" class="hover:text-pink-400 transition-all duration-200">Promociones</a></li>
+            <li><a href="#footer" class="hover:text-pink-400 transition-all duration-200">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
 
 
    
@@ -114,6 +99,12 @@
             <div class="product-card">
                 <img src="https://example.com/chocofresas.jpg" alt="Chocofresas" class="product-image">
                 <h4 class="text-xl  text-pink-600  font-bold mt-4">Chocofresas</h4>
+                <p class="mt-2 text-gray-600">Fresas frescas cubiertas de chocolate.</p>
+            </div>
+            <!-- Producto 6 -->
+            <div class="product-card">
+                <img src="https://example.com/chocofresas.jpg" alt="Cucharables " class="product-image">
+                <h4 class="text-xl  text-pink-600  font-bold mt-4">Cucharables de cheescake</h4>
                 <p class="mt-2 text-gray-600">Fresas frescas cubiertas de chocolate.</p>
             </div>
         </div>
