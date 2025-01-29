@@ -46,7 +46,12 @@ border-radius: 50%; /* Hace que el logo tenga forma circular */
   background: linear-gradient(to bottom right, #fd1d1d, #8a3ab9, #d62976, #f58529); /* Colores invertidos en hover */
 }
 
-/*productos mas vendidos*/
+h3.text-pink-400 {
+  text-shadow: 0 2px 5px rgb(206, 131, 169); /* Sombra brillante */
+}
+
+
+
 /* Productos más vendidos */
 .product-card {
   background-color: white;
