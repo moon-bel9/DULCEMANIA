@@ -11,20 +11,43 @@
 </head>
 <body class="font-sans bg-pink-50">
   <!-- Barra de navegación -->
-  <nav class="navbar text-white py-3">
-    <div class="flex items-center justify-between container mx-auto px-4">
+  <nav class="navbar text-white py-3 bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 shadow-md">
+    <div class="flex items-center justify-between container mx-auto px-6">
         <!-- Logo y título -->
         <div class="flex items-center space-x-4">
-            <img src="img/logo.png" alt="logo" class="h-12 w-12">
-            <h1 class="text-xl font-bold">Dulcemanía</h1>
+            <img src="img/logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-white">
+            <h1 class="text-2xl font-extrabold text-white tracking-wide">Dulcemanía</h1>
         </div>
 
         <!-- Menú en desktop -->
-        <ul id="menu" class="hidden md:flex space-x-4">
-            <li><a href="#productos" class="hover:underline">Productos</a></li>
-            <li><a href="#promociones" class="hover:underline">Promociones</a></li>
-            <li><a href="#footer" class="hover:underline">Contacto</a></li> <!-- Enlace al footer -->
+        <ul id="menu" class="hidden md:flex space-x-8 text-lg">
+            <li><a href="#productos" class="hover:text-yellow-200 transition-all duration-200">Productos</a></li>
+            <li><a href="#promociones" class="hover:text-yellow-200 transition-all duration-200">Promociones</a></li>
+            <li><a href="#footer" class="hover:text-yellow-200 transition-all duration-200">Contacto</a></li>
         </ul>
+
+        <!-- Icono de menú para móviles -->
+        <div class="md:hidden flex items-center space-x-2">
+            <button class="text-white focus:outline-none" id="mobile-menu-toggle">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menú desplegable en móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-4 px-6 space-y-4">
+        <ul>
+            <li><a href="#productos" class="hover:text-yellow-200 transition-all duration-200">Productos</a></li>
+            <li><a href="#promociones" class="hover:text-yellow-200 transition-all duration-200">Promociones</a></li>
+            <li><a href="#footer" class="hover:text-yellow-200 transition-all duration-200">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+   
 
         <!-- Botón de menú para móviles -->
         <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
@@ -34,7 +57,6 @@
         </button>
     </div>
 </nav>
-
 
     <!-- Hero Section -->
     <header class="hero-bg text-white text-center py-20 px-4">
@@ -50,19 +72,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <!-- Producto 1 -->
             <div class="product-card">
-                <img src="https://example.com/donas.jpg" alt="Donas" class="product-image">
+                <img src="img/donas.jpg" alt="Donas" class="product-image">
                 <h4 class="text-xl text-pink-600  font-bold mt-4">Minidonas</h4>
                 <p class="mt-2 text-gray-600">Deliciosas donas decoradas para San Valentín.</p>
-                <p class="mt-2 text-gray-600">Cobertura: Chocolate normal, blanco y rosada.</p>
             </div>
             <!-- Producto 2 -->
             <div class="product-card">
                 <img src="img/chocotejas.jpg" alt="Chocotejas" class="product-image">
                 <h4 class="text-xl  text-pink-600  font-bold mt-4">Chocotejas</h4>
                 <p class="mt-2 text-gray-600">Chocotejas rellenas de dulce amor.</p>
-                <p class="mt-2 text-gray-600">Cobertura: Chocolate normal, blanco y rosado.</p>
-                <p class="mt-2 text-gray-600">Relleno: rellenos clasicos con manjar o frutales.</p>
-                <p class="mt-2 text-gray-600">Forma: Cuadradas, corazon y figuritas.</p>
             </div>
             <!-- Producto 3 -->
             <div class="product-card">
@@ -86,7 +104,6 @@
     </div>
   </section>
   
-
    <!-- Promociones San Valentín -->
 <section id="promociones" class="bg-pink-100 py-12 px-4">
     <div class="container mx-auto text-center">
@@ -120,7 +137,6 @@
     </div>
 </section>
 
-
        <!-- Personaliza tu Pedido -->
        <section id="personalizacion" class="py-12 px-4 bg-pink-50">
         <div class="container mx-auto text-center">
@@ -133,7 +149,6 @@
             </ul>
             <p class="text-gray-600 font-bold mb-4">Precio de personalización: Desde S/15.00 (incluye caja y decoración).</p>
             <a href="https://wa.me/+51904042556?text=¡Hola 😊! Me interesa hacer un pedido ❤️" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-400">Consulta por WhatsApp</a>
-
         </div>
     </section>
 
@@ -145,9 +160,8 @@
           Síguenos en Instagram</a>
       </p>
   </footer>
-
     <!-- Script para menú móvil -->
-    <script href="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
