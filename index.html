@@ -7,6 +7,7 @@
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
 <body class="font-sans bg-pink-50">
@@ -20,10 +21,10 @@
         </div>
 
         <!-- Menú en desktop -->
-        <ul id="menu" class="hidden md:flex space-x-8 text-lg">
-            <li><a href="#productos" class="hover:text-yellow-200 transition-all duration-200">Productos</a></li>
-            <li><a href="#promociones" class="hover:text-yellow-200 transition-all duration-200">Promociones</a></li>
-            <li><a href="#footer" class="hover:text-yellow-200 transition-all duration-200">Contacto</a></li>
+        <ul id="menu" class="hidden md:flex space-x-9 text-lg">
+            <li><a href="#productos" class="hover:text-pink-400 transition-all duration-200">Productos</a></li>
+            <li><a href="#promociones" class="hover:text-pink-400 transition-all duration-200">Promociones</a></li>
+            <li><a href="#footer" class="hover:text-pink-400 transition-all duration-200">Contacto</a></li>
         </ul>
 
         <!-- Icono de menú para móviles -->
@@ -32,19 +33,34 @@
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
-            </button>
+            </button> 
         </div>
     </div>
+    
+<!-- Menú desplegable en móvil -->
+<div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 text-white py-4 px-6 space-y-4">
+    <ul>
+        <li class="flex items-center space-x-3">
+            <svg class="h-5 w-5 text-yellow-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4v16h18V4H3z" />
+            </svg>
+            <a href="#productos" class="hover:text-yellow-200 transition-all duration-200">Productos</a>
+        </li>
+        <li class="flex items-center space-x-3">
+            <svg class="h-5 w-5 text-yellow-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18" />
+            </svg>
+            <a href="#promociones" class="hover:text-yellow-200 transition-all duration-200">Promociones</a>
+        </li>
+        <li class="flex items-center space-x-3">
+            <svg class="h-5 w-5 text-yellow-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10V5a2 2 0 00-2-2H5a2 2 0 00-2 2v15a2 2 0 002 2h14a2 2 0 002-2v-5" />
+            </svg>
+            <a href="#footer" class="hover:text-yellow-200 transition-all duration-200">Contacto</a>
+        </li>
+    </ul>
+</div>
 
-    <!-- Menú desplegable en móvil -->
-    <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-4 px-6 space-y-4">
-        <ul>
-            <li><a href="#productos" class="hover:text-yellow-200 transition-all duration-200">Productos</a></li>
-            <li><a href="#promociones" class="hover:text-yellow-200 transition-all duration-200">Promociones</a></li>
-            <li><a href="#footer" class="hover:text-yellow-200 transition-all duration-200">Contacto</a></li>
-        </ul>
-    </div>
-</nav>
 
 
    
