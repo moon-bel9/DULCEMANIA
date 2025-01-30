@@ -1,14 +1,14 @@
-// Toggle el menú de escritorio (si lo necesitas)
+// Alterna la visibilidad del menú en desktop (si es necesario)
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const menu = document.getElementById('menu');
     menu.classList.toggle('hidden');
 });
 
-// Toggle el menú móvil
+// Alterna la visibilidad del menú móvil al hacer clic en el ícono
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
-// Alterna la visibilidad del menú móvil al hacer clic en el ícono
 mobileMenuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');  // Se asegura de que el menú se muestre o se oculte
+    // Alterna la clase 'hidden' para mostrar/ocultar el menú móvil
+    mobileMenu.classList.toggle('hidden');
 });
