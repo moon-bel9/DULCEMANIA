@@ -20,21 +20,12 @@
             <h1 class="text-2xl font-extrabold text-white tracking-wide">Dulcemanía</h1>
         </div>
 
-        <!-- Menú en desktop -->
-        <ul id="menu" class="hidden md:flex space-x-9 text-lg">
-            <li><a href="#productos" class="hover:text-pink-400 transition-all duration-200">Productos</a></li>
-            <li><a href="#promociones" class="hover:text-pink-400 transition-all duration-200">Promociones</a></li>
-            <li><a href="#footer" class="hover:text-pink-400 transition-all duration-200">Contacto</a></li>
-        </ul>
-
-        <!-- Icono de menú para móviles -->
-        <div class="md:hidden flex items-center space-x-2">
-            <button class="text-white focus:outline-none" id="mobile-menu-toggle">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button> 
-        </div>
+        <!-- Botón de menú para móviles -->
+        <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
     </div>
 
     <!-- Menú desplegable en móvil -->
@@ -45,24 +36,27 @@
             <li><a href="#footer" class="hover:text-pink-400 transition-all duration-200">Contacto</a></li>
         </ul>
     </div>
-</nav>
+  </nav>
+   <!-- Script para manejar la visibilidad del menú en dispositivos móviles -->
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        mobileMenuToggle.addEventListener('click', function() {
+            // Alterna la clase "hidden" para mostrar u ocultar el menú
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+  </script>
 
-        <!-- Botón de menú para móviles -->
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-    </div>
-</nav>
-
-    <!-- Hero Section -->
-    <header class="hero-bg text-white text-center py-20 px-4">
-        <h2 class="text-3xl md:text-4xl font-bold"><span class="highlight">¡Endulza tu San Valentín!</span></h2>
-        <p class="mt-4 text-lg text-pink-500">Descubre nuestros postres especiales para celebrar el amor y la amistad.</p>
-        <a href="#promociones" class="mt-6 inline-block bg-pink-400 text-white px-6 py-3 rounded-full hover:bg-purple-400">Ver Promociones</a>
-    </header>
+  <!-- Hero Section -->
+  <header id="hero-section" class="hero-bg text-white text-center py-20 px-4 transition-all duration-300">
+    <h2 class="text-3xl md:text-4xl font-bold"><span class="highlight">¡Endulza tu San Valentín!</span></h2>
+    <p class="mt-4 text-lg text-pink-500">Descubre nuestros postres especiales para celebrar el amor y la amistad.</p>
+    <a href="#promociones" class="mt-6 inline-block bg-pink-400 text-white px-6 py-3 rounded-full hover:bg-purple-400">Ver Promociones</a>
+  </header>
+  
 
  <!-- Productos Más Vendidos -->
 <section id="productos" class="py-12 px-4">
