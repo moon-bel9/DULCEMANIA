@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 <body class="font-sans bg-pink-50">
-    
-<!-- Barra de navegación -->
-<nav class="navbar text-white py-3 bg-gradient-to-r from-pink-500 via-red-200 to-blue-400 shadow-md">
+  <!-- Barra de navegación -->
+  <nav class="navbar text-white py-3 bg-gradient-to-r from-pink-500 via-red-200 to-blue-400 shadow-md">
     <div class="flex items-center justify-between container mx-auto px-6">
         <!-- Logo y título -->
         <div class="flex items-center space-x-4">
@@ -29,27 +29,26 @@
 
         <!-- Icono de menú para móviles -->
         <div class="md:hidden flex items-center space-x-2">
-            <button id="mobile-menu-toggle" class="text-white focus:outline-none">
+            <button class="text-white focus:outline-none" id="mobile-menu-toggle">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button> 
         </div>
     </div>
+
+    <!-- Menú desplegable en móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 text-white py-4 px-6 space-y-4">
+        <ul>
+            <li><a href="#productos" class="hover:text-pink-400 transition-all duration-200">Productos</a></li>
+            <li><a href="#promociones" class="hover:text-pink-400 transition-all duration-200">Promociones</a></li>
+            <li><a href="#footer" class="hover:text-pink-400 transition-all duration-200">Contacto</a></li>
+        </ul>
+    </div>
 </nav>
 
-<!-- Menú desplegable en móvil -->
-<div id="mobile-menu" class="md:hidden hidden bg-gradient-to-r from-pink-500 via-pink-300 to-indigo-400 text-white py-4 px-6 space-y-4">
-    <ul>
-        <li><a href="#productos" class="hover:text-pink-400 transition-all duration-200">Productos</a></li>
-        <li><a href="#promociones" class="hover:text-pink-400 transition-all duration-200">Promociones</a></li>
-        <li><a href="#footer" class="hover:text-pink-400 transition-all duration-200">Contacto</a></li>
-    </ul>
-</div>
 
-
-
-
+   
 
         <!-- Botón de menú para móviles -->
         <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
@@ -104,8 +103,8 @@
             </div>
             <!-- Producto 6 -->
             <div class="product-card">
-                <img src="https://example.com/chocofresas.jpg" alt="Cuchareables" class="product-image">
-                <h4 class="text-xl  text-pink-600  font-bold mt-4">Cuchareables de cheescake</h4>
+                <img src="https://example.com/chocofresas.jpg" alt="Cucharables " class="product-image">
+                <h4 class="text-xl  text-pink-600  font-bold mt-4">Cucharables de cheescake</h4>
                 <p class="mt-2 text-gray-600">Fresas frescas cubiertas de chocolate.</p>
             </div>
         </div>

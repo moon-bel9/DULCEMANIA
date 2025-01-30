@@ -163,16 +163,6 @@ h3.text-pink-400 {
   z-index: 1000;  /* Asegura que quede por encima de otros elementos */
 }
 
-/* Menú móvil oculto por defecto */
-#mobile-menu {
-  display: none;  /* Ocultar el menú móvil inicialmente */
-}
-
-/* Mostrar el menú móvil cuando está activado */
-#mobile-menu.show {
-  display: block;  /* Mostrar el menú cuando se le agregue la clase 'show' */
-}
-
 body {
-  padding-top: 80px;  /* Espacio para evitar que el contenido quede debajo de la barra */
+  padding-top: 80px;  /* Agrega espacio para evitar que el contenido quede oculto debajo de la barra */
 }
